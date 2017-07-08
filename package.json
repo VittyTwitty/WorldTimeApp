@@ -1,0 +1,31 @@
+{
+  "name": "worldtimeapp",
+  "version": "1.0.0",
+  "description": "-",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitalii Mazhara",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jquery": "^3.2.6",
+    "@types/moment": "^2.13.0",
+    "@types/node": "^8.0.8",
+    "browser-sync": "^2.18.12",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-typescript": "^3.1.7",
+    "gulp-uglifyjs": "^0.6.2",
+    "tsify": "^3.0.1",
+    "typescript": "^2.4.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "@types/d3": "^4.9.0",
+    "@types/handlebars": "^4.0.33"
+  }
+}
