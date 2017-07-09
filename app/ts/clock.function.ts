@@ -7,16 +7,24 @@ var d3 = require("d3");
 
 let clockContext: DataClock = new DataClock();
 let context = clockContext.context;
+console.log(clockContext);
 
+/**
+ * Calculate, settings, draw svg 
+ */
 export function analogClockTick() {
-    var w = 150             // Width of SVG element
-    var h = 150             // Height of SVG element
-    var cx = w / 2          // Center x
-    var cy = h / 2          // Center y
+    var w = 150
+    var h = 150
+    var cx = w / 2
+    var cy = h / 2
     var margin = 4
-    var r = w / 2 - margin  // Radius of clock face
+    var r = w / 2 - margin
 
     var classId = 0;
+    
+    /**
+     * Pass array of data
+     */
     context.clocksArr.forEach(function (val, i: number) {
         if (classId <= i) {
             classId = i;
@@ -38,8 +46,9 @@ export function analogClockTick() {
 
         makeClockFace();
 
-        // Create hands from dataset
-
+        /**
+         * Create hands from dataset
+         */
         svg.selectAll("line.hand")
             .data(getTimeOfDay())
             .enter()
@@ -53,10 +62,14 @@ export function analogClockTick() {
 
 
 
-        // Update hand positions once per second
-
+        /**
+         * Update hand positions once per second
+         */
         setInterval(updateHands, 1000);
 
+        /**
+         * Teak settings
+         */
         function makeClockFace() {
             var hourTickLength = Math.round(r * 0.2)
             var minuteTickLength = Math.round(r * 0.075)
@@ -82,6 +95,9 @@ export function analogClockTick() {
             }
         };
 
+        /**
+         * Get data from DataClock for update
+         */
         function getTimeOfDay() {
 
             let clockContext: DataClock = new DataClock();
@@ -96,6 +112,9 @@ export function analogClockTick() {
             ]
         };
 
+        /**
+         * Setting arrows and figures
+         */
         function handLength(d: any) {
             if (d[0] == "hour")
                 return Math.round(0.65 * r)
@@ -105,7 +124,7 @@ export function analogClockTick() {
 
         function handBackLength(d: any) {
             if (d[0] == "second")
-                return Math.round(0.10 * r)
+                return Math.round(0.18 * r)
             else
                 return Math.round(0.10 * r)
         };
@@ -130,7 +149,7 @@ export function analogClockTick() {
             .attr("class", "inner_circle")
             .attr("cx", cx)
             .attr("cy", cy)
-            .attr("r", 4);
+            .attr("r", 5);
 
     })
 };

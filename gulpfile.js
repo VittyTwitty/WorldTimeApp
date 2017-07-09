@@ -32,6 +32,7 @@ gulp.task('scripts', function () {
     return gulp.src([
         'app/libs/jquery/dist/jquery.min.js',
         'app/libs/moment/min/moment.min.js',
+        'app/libs/custom-select/custom-select.js',
         'app/libs/handlebars/handlebars.min.js'
     ])
         .pipe(concat('libs.min.js')) // Собираем новом файле libs.min.js

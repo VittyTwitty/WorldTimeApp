@@ -2,7 +2,8 @@ body {
   background-color: #fafafa;
   padding: 0;
   margin: 0;
-  font-family: 'Cabin', sans-serif; }
+  font-family: 'Cabin', sans-serif;
+  font-size: 16px; }
 
 li {
   list-style: none; }
@@ -28,15 +29,26 @@ header {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-justify-content: space-around;
-      -ms-flex-pack: distribute;
-          justify-content: space-around; }
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .clock_item {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.250em; }
 
 .face {
   stroke: #91787B;

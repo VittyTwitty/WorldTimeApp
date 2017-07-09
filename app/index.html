@@ -12,47 +12,24 @@
 </head>
 
 <body>
-
     <header>
         <h1>World time now</h1>
     </header>
 
     <figure>
         <div id="listClocks" class="clock"></div>
-
-
         <script id="clock-template" type="text/x-handlebars-template">
-
-
             <div class="clock_list">
                 {{#clocksArr}}
-
-
                 <ul class="clock_item">
-                    <div class="chart_{{@key}}"></div>
                     <li>{{id}}</li>
-
+                    <div class="chart_{{@key}}"></div>                    
+                    <li>{{description}}</li>                    
                 </ul>
-
                 {{/clocksArr}}
-
             </div>
         </script>
-        <p>sdfdfdf</p>
     </figure>
-
-
-
-
-
-
-    <!--<br>
-                    <li id="hours">{{hours clocksArr}}</li>
-                    <li id="point">:</li>
-                    <li id="min">{{minutes clocksArr}}</li>
-                    <li id="point">:</li>
-                    <li id="sec">{{seconds clocksArr}}</li>
-                    <br>-->
 
     <script src="scripts/libs.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
