@@ -3,7 +3,7 @@ import { HoursOfClock } from "./partials/hours";
 import { MinutesOfClock } from "./partials/minutes";
 import { SecondsOfClock } from "./partials/seconds";
 
-var d3 = require("d3");
+const d3 = require("d3");
 
 let clockContext: DataClock = new DataClock();
 let context = clockContext.context;
@@ -13,14 +13,14 @@ console.log(clockContext);
  * Calculate, settings, draw svg 
  */
 export function analogClockTick() {
-    var w = 150
-    var h = 150
-    var cx = w / 2
-    var cy = h / 2
-    var margin = 4
-    var r = w / 2 - margin
+    let w = 150
+    let h = 150
+    let cx = w / 2
+    let cy = h / 2
+    let margin = 4
+    let r = w / 2 - margin
 
-    var classId = 0;
+    let classId = 0;
     
     /**
      * Pass array of data
@@ -33,12 +33,12 @@ export function analogClockTick() {
         }
         console.log(classId);
 
-        var svg = d3.selectAll('.chart_' + classId).append("svg")
+        let svg = d3.selectAll('.chart_' + classId).append("svg")
             .attr("class", "clock")
             .attr("width", w)
             .attr("height", h);
 
-        var circle = svg.append("circle")
+        let circle = svg.append("circle")
             .attr("class", "inner_circle")
             .attr("cx", cx)
             .attr("cy", cy)
@@ -71,10 +71,10 @@ export function analogClockTick() {
          * Teak settings
          */
         function makeClockFace() {
-            var hourTickLength = Math.round(r * 0.2)
-            var minuteTickLength = Math.round(r * 0.075)
-            for (var i = 0; i < 60; ++i) {
-                var tickLength, tickClass
+            let hourTickLength = Math.round(r * 0.2)
+            let minuteTickLength = Math.round(r * 0.075)
+            for (let i = 0; i < 60; ++i) {
+                let tickLength, tickClass
                 if ((i % 5) == 0) {
                     tickLength = hourTickLength
                     tickClass = "hourtick"
@@ -102,9 +102,9 @@ export function analogClockTick() {
 
             let clockContext: DataClock = new DataClock();
 
-            var hr = +(new HoursOfClock(clockContext.context.clocksArr[i].newDate).getTime());
-            var min = +(new MinutesOfClock(clockContext.context.clocksArr[i].newDate).getTime());
-            var sec = +(new SecondsOfClock(clockContext.context.clocksArr[i].newDate).getTime());
+            let hr = +(new HoursOfClock(clockContext.context.clocksArr[i].newDate).getTime());
+            let min = +(new MinutesOfClock(clockContext.context.clocksArr[i].newDate).getTime());
+            let sec = +(new SecondsOfClock(clockContext.context.clocksArr[i].newDate).getTime());
             return [
                 ["hour", hr],
                 ["minute", min],
@@ -130,7 +130,7 @@ export function analogClockTick() {
         };
 
         function rotationTransform(d: any) {
-            var angle
+            let angle
             if (d[0] == "hour")
                 angle = (d[1] % 12) * 30
             else
@@ -145,11 +145,6 @@ export function analogClockTick() {
                 .attr("transform", rotationTransform)
         };
 
-        var circle = svg.append("circle")
-            .attr("class", "inner_circle")
-            .attr("cx", cx)
-            .attr("cy", cy)
-            .attr("r", 5);
 
     })
 };

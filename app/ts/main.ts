@@ -6,12 +6,12 @@ let clockContext: DataClock = new DataClock();
 
 let time = clockContext.context.clocksArr[0].newDate;
 
-var source = $("#clock-template").html();
-var template = Handlebars.compile(source);
+let source = $("#clock-template").html();
+let template = Handlebars.compile(source);
 
 
 let context = clockContext.context;
-var html = template(context);
+let html = template(context);
 
 document.getElementById('listClocks').innerHTML = html;
 

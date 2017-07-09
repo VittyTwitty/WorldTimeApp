@@ -26,6 +26,8 @@
   },
   "dependencies": {
     "@types/d3": "^4.9.0",
-    "@types/handlebars": "^4.0.33"
+    "@types/handlebars": "^4.0.33",
+    "moment-timezone": "^0.5.13",
+    "d3": "^4.9.1"
   }
 }
