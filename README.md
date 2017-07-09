@@ -1,4 +1,10 @@
-For install best project of the world try: 
-          npm install
-Fr watch:
-					gulp
+# World time app
+
+Try tick-tak
+
+## Getting Started
+
+In your console:
+1. npm install
+2. gulp
+
